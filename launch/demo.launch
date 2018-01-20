@@ -1,0 +1,8 @@
+<launch>
+
+	<node pkg="xsenstoimu" type="xsenstoimu" name="xsenstoimu" output="screen">
+		<remap from="mti" to="mti/imuX" />
+		<remap from="imu" to="mti/imu" />
+	</node>
+
+</launch>
