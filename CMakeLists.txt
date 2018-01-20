@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
 	roscpp
 	sensor_msgs
 	xsens_slim
+	tf
 )
 
 
@@ -15,6 +16,10 @@ include_directories( include
 	${catkin_INCLUDE_DIRS}
 )
 
+catkin_package(
+  CATKIN_DEPENDS roscpp sensor_msgs xsens_slim
+)
+
 add_executable(xsenstoimu src/xsenstoimu.cpp src/xsenstoimu_utils.cpp)
 set_target_properties(xsenstoimu PROPERTIES COMPILE_FLAGS "-O3")
-target_link_libraries(xsenstoimu ${catkin_LIBRARIES})
+target_link_libraries(xsenstoimu ${catkin_LIBRARIES} -lrt)

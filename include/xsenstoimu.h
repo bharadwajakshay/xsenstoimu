@@ -6,6 +6,8 @@
 #include <cmath>
 #include <math.h>
 #include <xsens_slim/imuX.h>
+#include <tf/LinearMath/Matrix3x3.h>
+#include <geometry_msgs/Quaternion.h>
 
 class xsenstoimu
 {
@@ -17,6 +19,5 @@ private:
 public:
 	void callbackmti(const xsens_slim::imuX::Ptr msg);
 	xsenstoimu();
-
 
 };
